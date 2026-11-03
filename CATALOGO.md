@@ -357,17 +357,12 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 |---|---|---|---|---|---|
 | <img src="t/C-028.jpg" width="110"> | **C-028** | Sígueme de oro enchapado | Oro enchapado |  | **$32.50** c/u |
 
-### Bruja cerrada
+### Bruja con broche
 
 | Foto | Código | Prenda | Material | Incluye | Precio |
 |---|---|---|---|---|---|
 | <img src="t/C-031.jpg" width="110"> | **C-031** | Bruja cerrada de oro enchapado | Oro enchapado |  | **$32.50** c/u |
 | <img src="t/C-032.jpg" width="110"> | **C-032** | Bruja cerrada de oro enchapado | Oro enchapado |  | **$39.00** c/u |
-
-### Bruja con broche
-
-| Foto | Código | Prenda | Material | Incluye | Precio |
-|---|---|---|---|---|---|
 | <img src="t/C-033.jpg" width="110"> | **C-033** | Bruja con broche de oro enchapado | Oro enchapado |  | **$26.00** c/u |
 | <img src="t/C-034.jpg" width="110"> | **C-034** | Bruja con broche de oro enchapado | Oro enchapado |  | **$26.00** c/u |
 
