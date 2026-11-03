@@ -557,13 +557,18 @@ $('heroImgs').innerHTML=DATA.hero.map(id=>`<img src="i/${img0(id)}.jpg" alt="">`
 $('catTiles').innerHTML=secs.map(k=>{const c=P.filter(p=>p.sec===k).length;return `<a class="cat" href="#c-${k}"><img src="i/${img0(SECPROD[k])}.jpg" alt="" loading="lazy"><div class="ct"><div><h3>${SECNAME[k]}</h3><small>${c} productos</small></div><span class="go" aria-hidden="true">→</span></div></a>`;}).join('');
 $('newGrid').innerHTML=DATA.dest.map(id=>byId[id]).map(card).join('');
 const GIFT=9.99;  // "Pequeños regalos": menos de $10
-$('giftRail').innerHTML=P.filter(p=>p.price<10).sort((a,b)=>a.price-b.price||a.ord-b.ord).map(card).join('');
-// flechas de los carruseles: avanzan una "página" y se ocultan en los extremos
-const railBtns=()=>document.querySelectorAll('.cbtn').forEach(b=>{const r=$(b.dataset.rail);const d=+b.dataset.dir;
- b.disabled=d<0?r.scrollLeft<4:r.scrollLeft+r.clientWidth>=r.scrollWidth-4;});
-document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{const r=$(b.dataset.rail);r.scrollBy({left:+b.dataset.dir*r.clientWidth,behavior:'smooth'});}));
-document.querySelectorAll('.rail').forEach(r=>r.addEventListener('scroll',railBtns,{passive:true}));
-window.addEventListener('resize',railBtns);
+// regalos: primero broches y jazmines intercalados; luego el resto de menor a mayor precio
+const gifts=P.filter(p=>p.price<10).sort((a,b)=>a.price-b.price||a.ord-b.ord);
+const gB=gifts.filter(p=>p.sec==='broches'),gJ=gifts.filter(p=>/^Jazm/.test(p.tags[0]||'')),mix=[];
+for(let i=0;i<Math.max(gB.length,gJ.length);i++){if(gB[i])mix.push(gB[i]);if(gJ[i])mix.push(gJ[i]);}
+$('giftRail').innerHTML=mix.concat(gifts.filter(p=>!mix.includes(p))).map(card).join('');
+// flechas de los carruseles: avanzan una "página"; nunca se acaban: al final vuelven al primero y viceversa
+const railBtns=()=>{};
+document.querySelectorAll('.cbtn').forEach(b=>b.addEventListener('click',()=>{const r=$(b.dataset.rail),d=+b.dataset.dir;
+ const end=r.scrollWidth-r.clientWidth;
+ if(d>0&&r.scrollLeft>=end-4)r.scrollTo({left:0,behavior:'smooth'});
+ else if(d<0&&r.scrollLeft<=4)r.scrollTo({left:end,behavior:'smooth'});
+ else r.scrollBy({left:d*r.clientWidth,behavior:'smooth'});}));
 $('postGrid').innerHTML=POSTS.map(postCard).join('');
 
 const st={sec:'',tipos:new Set(),mats:new Set(),nina:new Set(),cols:new Set(),pmin:null,pmax:null,q:'',sort:'new',shown:24,exp:new Set(),qt:[],qfix:''};const PAGE=24;const MAXF=7;
