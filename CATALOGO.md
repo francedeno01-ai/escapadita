@@ -2,7 +2,7 @@
 
 La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 
-251 modelos. **Precios en dólares, sin ITBMS.** Para pedir, indica el código del modelo. Tienda: https://francedeno01-ai.github.io/escapadita/
+254 modelos. **Precios en dólares, sin ITBMS.** Para pedir, indica el código del modelo. Tienda: https://francedeno01-ai.github.io/escapadita/
 
 ## Contenido
 
@@ -13,7 +13,7 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 - [Tapahuesos](#tapahuesos) (12)
 - [Cadenas](#cadenas) (35)
 - [Combos de cadenas](#combos-de-cadenas) (3)
-- [Peinetas y adornos de cabeza](#peinetas-y-adornos-de-cabeza) (26)
+- [Peinetas y adornos de cabeza](#peinetas-y-adornos-de-cabeza) (29)
 - [Pulseras y cañas](#pulseras-y-cañas) (5)
 - [Sortijas](#sortijas) (8)
 
@@ -291,9 +291,12 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 | <img src="t/PE-021.jpg" width="110"> | **PE-021** | Peinetón de oro enchapado | Oro enchapado |  | **$13.00** c/u |
 | <img src="t/PE-022.jpg" width="110"> | **PE-022** | Pajuela con perlas blancas de oro enchapado | Oro enchapado |  | **$13.00** c/u |
 | <img src="t/PE-023.jpg" width="110"> | **PE-023** | Jazmín con perlas blancas de oro enchapado | Oro enchapado |  | **$5.00** c/u |
-| <img src="t/PE-024.jpg" width="110"> | **PE-024** | Jazmín con perlas color rojo y turquesa de oro enchapado | Oro enchapado |  | **$5.00** c/u |
-| <img src="t/PE-025.jpg" width="110"> | **PE-025** | Jazmín móvil con perlas color turquesa, rojo y blanco de oro enchapado | Oro enchapado |  | **$8.00** c/u |
-| <img src="t/PE-026.jpg" width="110"> | **PE-026** | Gancho de flor con perlas blancas de oro enchapado | Oro enchapado |  | **$5.00** c/u |
+| <img src="t/PE-024.jpg" width="110"> | **PE-024** | Jazmín con perlas color rojo de oro enchapado | Oro enchapado |  | **$5.00** c/u |
+| <img src="t/PE-025.jpg" width="110"> | **PE-025** | Jazmín con perlas color turquesa de oro enchapado | Oro enchapado |  | **$5.00** c/u |
+| <img src="t/PE-026.jpg" width="110"> | **PE-026** | Jazmín móvil con perlas color turquesa de oro enchapado | Oro enchapado |  | **$8.00** c/u |
+| <img src="t/PE-027.jpg" width="110"> | **PE-027** | Jazmín móvil con perlas blancas de oro enchapado | Oro enchapado |  | **$8.00** c/u |
+| <img src="t/PE-028.jpg" width="110"> | **PE-028** | Jazmín móvil con perlas color rojo de oro enchapado | Oro enchapado |  | **$8.00** c/u |
+| <img src="t/PE-029.jpg" width="110"> | **PE-029** | Gancho de flor con perlas blancas de oro enchapado | Oro enchapado |  | **$5.00** c/u |
 
 ## Pulseras y cañas
 
