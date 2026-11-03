@@ -132,6 +132,7 @@ a{color:inherit}
 .chk input:checked{background:var(--red);border-color:var(--red)}
 .chk input:checked::after{content:"";width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
 .chk .n{margin-left:auto;padding-left:8px;color:var(--mut);font-size:13px;font-variant-numeric:tabular-nums}
+.fmore{background:none;border:0;padding:6px 0 0;color:var(--red);font-weight:700;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .chk .sw{width:14px;height:14px;border-radius:50%;flex:none;border:1px solid rgba(0,0,0,.18)}
 .pvals{display:flex;justify-content:space-between;font-weight:700;font-size:14px;font-variant-numeric:tabular-nums;margin-bottom:6px}
 .dual{position:relative;height:28px}
@@ -521,7 +522,7 @@ $('catTiles').innerHTML=secs.map(k=>{const c=P.filter(p=>p.sec===k).length;retur
 $('newGrid').innerHTML=DATA.dest.map(id=>byId[id]).map(card).join('');
 $('postGrid').innerHTML=POSTS.map(postCard).join('');
 
-const st={sec:'',tipos:new Set(),mats:new Set(),nina:new Set(),cols:new Set(),pmin:null,pmax:null,q:'',sort:'new',shown:24};const PAGE=24;
+const st={sec:'',tipos:new Set(),mats:new Set(),nina:new Set(),cols:new Set(),pmin:null,pmax:null,q:'',sort:'new',shown:24,exp:new Set()};const PAGE=24;const MAXF=7;
 const CORD=DATA.corder;
 const SW={'Blanco (perla)':'#f6f1e7','Rojo':'#c0392b','Turquesa':'#2bb3b1','Coral':'#f07a55','Rosado':'#f2a7c0','Azul':'#2c4fa3','Verde':'#2e8b57','Negro':'#222','Morado':'#7d3c98','Cristal':'linear-gradient(135deg,#fff,#cfe3ee,#fff)','Multicolor':'conic-gradient(#c0392b,#e1b12c,#2e8b57,#2c4fa3,#7d3c98,#c0392b)','Dorado':'linear-gradient(135deg,#f3d27a,#c9962b)'};
 const NI=p=>p.nina?'Sí':'No';
@@ -541,8 +542,13 @@ function match(p,skip){
    un grupo se oculta si no hay al menos 2 opciones para elegir (salvo que tenga algo marcado) */
 function facets(keepPrice){const b=base();
  const row=(g,v,c,on,sw)=>`<label class="chk"><input type="checkbox" data-g="${g}" value="${v}" ${on?'checked':''}>${sw?`<span class="sw" style="background:${sw}"></span>`:''}<span>${v}</span><span class="n">${c}</span></label>`;
+ // máximo MAXF opciones visibles (más las marcadas); "Ver más" amplía la lista
  const grp=(gid,fid,g,order,count,sel,swf)=>{const opts=order.filter(v=>count[v]||sel.has(v));
-  $(gid).hidden=!(opts.length>=2||sel.size);$(fid).innerHTML=opts.map(v=>row(g,v,count[v]||0,sel.has(v),swf&&swf(v))).join('');};
+  $(gid).hidden=!(opts.length>=2||sel.size);
+  const open=st.exp.has(g),short=opts.filter((v,i)=>i<MAXF||sel.has(v)),extra=opts.length-short.length;
+  const vis=open?opts:short;
+  $(fid).innerHTML=vis.map(v=>row(g,v,count[v]||0,sel.has(v),swf&&swf(v))).join('')+
+   (extra>0?`<button type="button" class="fmore" data-g="${g}" aria-expanded="${open}">${open?'Ver menos':'Ver más ('+extra+')'}</button>`:'');};
  const cnt=(skip,f)=>{const c={};b.filter(p=>match(p,skip)).forEach(p=>[].concat(f(p)).forEach(v=>c[v]=(c[v]||0)+1));return c;};
  grp('gTipo','fTipo','t',TORD,cnt('t',p=>p.tags),st.tipos);
  grp('gMat','fMat','m',MORD,cnt('m',p=>p.mat),st.mats);
@@ -582,10 +588,11 @@ function renderShop(keepPrice){
 const reset=()=>{st.shown=PAGE;};
 const SETS={t:'tipos',m:'mats',n:'nina',c:'cols'};
 $('side').addEventListener('change',e=>{const i=e.target;if(i.type!=='checkbox')return;const s=st[SETS[i.dataset.g]];i.checked?s.add(i.value):s.delete(i.value);reset();renderShop();});
+$('side').addEventListener('click',e=>{const b=e.target.closest('.fmore');if(!b)return;const g=b.dataset.g;st.exp.has(g)?st.exp.delete(g):st.exp.add(g);facets(true);});
 $('side').addEventListener('input',e=>{const i=e.target;if(i.id!=='rLo'&&i.id!=='rHi')return;
  const L=$('rLo'),H=$('rHi');if(+L.value>+H.value){if(i===L)L.value=H.value;else H.value=L.value;}
  st.pmin=+L.value>pb.lo?+L.value:null;st.pmax=+H.value<pb.hi?+H.value:null;paintPrice();reset();renderShop(true);});
-const clearAll=()=>{st.tipos.clear();st.mats.clear();st.nina.clear();st.cols.clear();st.pmin=st.pmax=null;};
+const clearAll=()=>{st.exp.clear();st.tipos.clear();st.mats.clear();st.nina.clear();st.cols.clear();st.pmin=st.pmax=null;};
 const clearQ=()=>{st.q='';qins.forEach(x=>x.value='');};
 $('active').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const g=b.dataset.g;
  if(SETS[g])st[SETS[g]].delete(b.dataset.v);else if(g==='p'){st.pmin=st.pmax=null;}else if(g==='q')clearQ();else{clearAll();clearQ();}reset();renderShop();});
