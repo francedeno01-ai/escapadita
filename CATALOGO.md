@@ -2,7 +2,7 @@
 
 La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 
-254 modelos. **Precios en dólares, sin ITBMS.** Para pedir, indica el código del modelo. Tienda: https://francedeno01-ai.github.io/escapadita/
+265 modelos. **Precios en dólares, sin ITBMS.** Para pedir, indica el código del modelo. Tienda: https://francedeno01-ai.github.io/escapadita/
 
 ## Contenido
 
@@ -15,6 +15,7 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 - [Combos de cadenas](#combos-de-cadenas) (3)
 - [Peinetas](#peinetas) (15)
 - [Pajuelas, jazmines y ganchos](#pajuelas-jazmines-y-ganchos) (14)
+- [Broches](#broches) (11)
 - [Pulseras y cañas](#pulseras-y-cañas) (5)
 - [Sortijas](#sortijas) (8)
 
@@ -303,6 +304,22 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 | <img src="t/PE-027.jpg" width="110"> | **PE-027** | Jazmín móvil con perlas blancas de oro enchapado | Oro enchapado |  | **$8.00** c/u |
 | <img src="t/PE-028.jpg" width="110"> | **PE-028** | Jazmín móvil con perlas color rojo de oro enchapado | Oro enchapado |  | **$8.00** c/u |
 | <img src="t/PE-029.jpg" width="110"> | **PE-029** | Gancho de flor con perlas blancas de oro enchapado | Oro enchapado |  | **$5.00** c/u |
+
+## Broches
+
+| Foto | Código | Prenda | Material | Incluye | Precio |
+|---|---|---|---|---|---|
+| <img src="t/B-001.jpg" width="110"> | **B-001** | Broche con perlas blancas de oro enchapado | Oro enchapado |  | **$9.00** c/u |
+| <img src="t/B-002.jpg" width="110"> | **B-002** | Broche con perlas blancas de oro enchapado | Oro enchapado |  | **$9.00** c/u |
+| <img src="t/B-003.jpg" width="110"> | **B-003** | Broche de oro enchapado | Oro enchapado |  | **$9.00** c/u |
+| <img src="t/B-004.jpg" width="110"> | **B-004** | Broche de oro enchapado | Oro enchapado |  | **$9.00** c/u |
+| <img src="t/B-005.jpg" width="110"> | **B-005** | Broche de oro enchapado | Oro enchapado |  | **$9.00** c/u |
+| <img src="t/B-006.jpg" width="110"> | **B-006** | Broche de oro enchapado | Oro enchapado |  | **$9.00** c/u |
+| <img src="t/B-007.jpg" width="110"> | **B-007** | Broche de oro enchapado | Oro enchapado |  | **$9.00** c/u |
+| <img src="t/B-008.jpg" width="110"> | **B-008** | Broche con perlas blancas de oro enchapado | Oro enchapado |  | **$9.00** c/u |
+| <img src="t/B-009.jpg" width="110"> | **B-009** | Broche de oro enchapado | Oro enchapado |  | **$9.00** c/u |
+| <img src="t/B-010.jpg" width="110"> | **B-010** | Broche con perlas blancas de oro enchapado | Oro enchapado |  | **$9.00** c/u |
+| <img src="t/B-011.jpg" width="110"> | **B-011** | Flor de guate con perlas color rosado de bronce baño 18k | Bronce baño 18k |  | **$23.50** c/u |
 
 ## Pulseras y cañas
 
