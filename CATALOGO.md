@@ -13,7 +13,8 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 - [Tapahuesos](#tapahuesos) (12)
 - [Cadenas](#cadenas) (35)
 - [Combos de cadenas](#combos-de-cadenas) (3)
-- [Peinetas y adornos de cabeza](#peinetas-y-adornos-de-cabeza) (29)
+- [Peinetas](#peinetas) (15)
+- [Pajuelas, jazmines y ganchos](#pajuelas-jazmines-y-ganchos) (14)
 - [Pulseras y cañas](#pulseras-y-cañas) (5)
 - [Sortijas](#sortijas) (8)
 
@@ -264,16 +265,10 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 | <img src="t/CC-002.jpg" width="110"> | **CC-002** | Combo de 8 cadenas de acero inoxidable | Acero inoxidable | escapulario, bruja abierta, cadena chata, cabestrillo, guachapalí, rosario, pescadito, salomónica | **$104.00** el combo |
 | <img src="t/CC-003.jpg" width="110"> | **CC-003** | Combo de 8 cadenas, set de peinetas, zarcillos y tapahueso de acero inoxidable | Acero inoxidable | escapulario, bruja abierta, cadena chata, cabestrillo, guachapalí, rosario, pescadito, salomónica, set de peinetas, zarcillos, tapahueso | **$158.50** el combo |
 
-## Peinetas y adornos de cabeza
+## Peinetas
 
 | Foto | Código | Prenda | Material | Incluye | Precio |
 |---|---|---|---|---|---|
-| <img src="t/PE-001.jpg" width="110"> | **PE-001** | Pajuela con perlas blancas de acero inoxidable | Acero inoxidable |  | **$18.00** c/u |
-| <img src="t/PE-002.jpg" width="110"> | **PE-002** | Pajuela con perlas color rojo y blanco de acero inoxidable | Acero inoxidable |  | **$23.50** c/u |
-| <img src="t/PE-003.jpg" width="110"> | **PE-003** | Pajuela con perlas blancas de acero inoxidable | Acero inoxidable |  | **$18.00** c/u |
-| <img src="t/PE-004.jpg" width="110"> | **PE-004** | Gancho jazmín con perlas color rojo de acero inoxidable | Acero inoxidable |  | **$10.00** c/u |
-| <img src="t/PE-005.jpg" width="110"> | **PE-005** | Gancho jazmín con perlas color turquesa de acero inoxidable | Acero inoxidable |  | **$10.00** c/u |
-| <img src="t/PE-006.jpg" width="110"> | **PE-006** | Gancho jazmín con perlas blancas de acero inoxidable | Acero inoxidable |  | **$10.00** c/u |
 | <img src="t/PE-007.jpg" width="110"> | **PE-007** | Juego de peinetas completo con perlas color rojo de acero inoxidable | Acero inoxidable | peineta grande, 4 peinetas pequeñas (2 con voluta) | **$65.00** el juego |
 | <img src="t/PE-008.jpg" width="110"> | **PE-008** | Juego de peinetas completo con perlas color azul de acero inoxidable | Acero inoxidable | peineta grande, 4 peinetas pequeñas (2 con voluta) | **$65.00** el juego |
 | <img src="t/PE-009.jpg" width="110"> | **PE-009** | Juego de peinetas completo de acero inoxidable | Acero inoxidable | peineta grande, 4 peinetas pequeñas (2 con voluta) | **$65.00** el juego |
@@ -289,6 +284,17 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 | <img src="t/PE-019.jpg" width="110"> | **PE-019** | Par de peinetas balcones con perlas blancas de acero inoxidable | Acero inoxidable |  | **$26.00** el par |
 | <img src="t/PE-020.jpg" width="110"> | **PE-020** | Peinetón con perlas blancas de oro enchapado | Oro enchapado |  | **$19.50** c/u |
 | <img src="t/PE-021.jpg" width="110"> | **PE-021** | Peinetón de oro enchapado | Oro enchapado |  | **$13.00** c/u |
+
+## Pajuelas, jazmines y ganchos
+
+| Foto | Código | Prenda | Material | Incluye | Precio |
+|---|---|---|---|---|---|
+| <img src="t/PE-001.jpg" width="110"> | **PE-001** | Pajuela con perlas blancas de acero inoxidable | Acero inoxidable |  | **$18.00** c/u |
+| <img src="t/PE-002.jpg" width="110"> | **PE-002** | Pajuela con perlas color rojo y blanco de acero inoxidable | Acero inoxidable |  | **$23.50** c/u |
+| <img src="t/PE-003.jpg" width="110"> | **PE-003** | Pajuela con perlas blancas de acero inoxidable | Acero inoxidable |  | **$18.00** c/u |
+| <img src="t/PE-004.jpg" width="110"> | **PE-004** | Gancho jazmín con perlas color rojo de acero inoxidable | Acero inoxidable |  | **$10.00** c/u |
+| <img src="t/PE-005.jpg" width="110"> | **PE-005** | Gancho jazmín con perlas color turquesa de acero inoxidable | Acero inoxidable |  | **$10.00** c/u |
+| <img src="t/PE-006.jpg" width="110"> | **PE-006** | Gancho jazmín con perlas blancas de acero inoxidable | Acero inoxidable |  | **$10.00** c/u |
 | <img src="t/PE-022.jpg" width="110"> | **PE-022** | Pajuela con perlas blancas de oro enchapado | Oro enchapado |  | **$13.00** c/u |
 | <img src="t/PE-023.jpg" width="110"> | **PE-023** | Jazmín con perlas blancas de oro enchapado | Oro enchapado |  | **$5.00** c/u |
 | <img src="t/PE-024.jpg" width="110"> | **PE-024** | Jazmín con perlas color rojo de oro enchapado | Oro enchapado |  | **$5.00** c/u |
