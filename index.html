@@ -539,7 +539,7 @@ $('fcats').innerHTML=secs.map(k=>`<li><a href="#c-${k}">${SECNAME[k]}</a></li>`)
 $('fposts').innerHTML=POSTS.slice(0,4).map(a=>`<li><a href="#blog-${a.slug}">${a.title}</a></li>`).join('');
 
 const nModels=P.reduce((s,p)=>s+p.models.length,0);
-$('facts').innerHTML=`<div><b>${P.length}</b><span>modelos con precio</span></div><div><b>${money(Math.min(...P.map(p=>p.price)))}</b><span>desde</span></div><div><b>${secs.length}</b><span>categorías</span></div>`;
+$('facts').innerHTML=`<div><b>${secs.length}</b><span>categorías</span></div><div><b>${P.length}</b><span>modelos con precio</span></div><div><b>${money(Math.min(...P.map(p=>p.price)))}</b><span>desde</span></div>`;
 $('heroImgs').innerHTML=DATA.hero.map(id=>`<img src="i/${img0(id)}.jpg" alt="">`).join('')+`<img class="seal" src="brand/logo.jpg" alt="Sello La Escapadita a lo Nuestro">`;
 $('catTiles').innerHTML=secs.map(k=>{const c=P.filter(p=>p.sec===k).length;return `<a class="cat" href="#c-${k}"><img src="i/${img0(SECPROD[k])}.jpg" alt="" loading="lazy"><div class="ct"><div><h3>${SECNAME[k]}</h3><small>${c} productos</small></div><span class="go" aria-hidden="true">→</span></div></a>`;}).join('');
 $('newGrid').innerHTML=DATA.dest.map(id=>byId[id]).map(card).join('');
