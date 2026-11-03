@@ -447,6 +447,26 @@ P.forEach(p=>{
  p.gal=p.vistas.map(v=>({img:v,m:-1})).concat(...p.models.map((m,k)=>m.imgs.map(i=>({img:i,m:k}))));
  p._s=norm([p.name,p.mat,p.tags.join(' '),p.incl.join(' '),p.id,p.color||'',p.desc||'',...p.models.map(m=>m.ref+' '+(m.desc||''))].join(' '));});
 const byId=Object.fromEntries(P.map(p=>[p.id,p]));
+/* buscador: tabla de equivalencias (sinónimos + errores de escritura) y corrección por parecido */
+const SYN={},SYNF=[],REAL={};
+// la tabla (sinonimos.json) se carga en segundo plano; si ya hay una búsqueda escrita, se vuelve a aplicar
+fetch('sinonimos.json').then(r=>r.json()).then(d=>{Object.entries(d).forEach(([real,vs])=>{const r=norm(real);REAL[r]=real;SYN[r]=r;
+ vs.forEach(v=>{v.includes(' ')?SYNF.push([v,r]):(SYN[v]=r);});});SYNF.sort((a,b)=>b[0].length-a[0].length);
+ VOC.push(...Object.keys(REAL));if(qins[0].value)qins[0].dispatchEvent(new Event('input'));}).catch(()=>{});
+const VOC=[...new Set(P.flatMap(p=>p._s.split(/[^a-z0-9ñ]+/)).filter(w=>w.length>=3))];
+const stem=t=>t.length>4?t.replace(/(es|os|as|o|a|s)$/,''):t;
+function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;let p=[...Array(b.length+1).keys()];
+ for(let i=1;i<=a.length;i++){const c=[i];for(let j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[b.length];}
+function parseQ(raw){let q=norm(raw);const fixes=[];
+ SYNF.forEach(([v,r])=>{if(q.includes(v)){q=q.split(v).join(r);fixes.push(r);}});
+ const toks=q.split(/\s+/).filter(Boolean).map(t=>{
+  if(SYN[t]){if(SYN[t]!==t)fixes.push(SYN[t]);return {o:t,c:SYN[t]};}
+  if(t.length<4||P.some(p=>p._s.includes(t)))return {o:t,c:t};
+  let best=null,bd=9;for(const w of VOC){const d=lev(t,w);if(d<bd){bd=d;best=w;}}
+  if(best&&bd<=(t.length>=6?2:1)){const c=SYN[best]||best;fixes.push(c);return {o:t,c};}
+  return {o:t,c:t};});
+ return {toks,shown:fixes.length?toks.map(x=>REAL[x.c]||x.c).join(' '):''};}
+const tokOk=(p,x)=>[x.c,stem(x.c),x.o].some(t=>t&&p._s.includes(t));
 const img0=id=>byId[id]?byId[id].gal[0].img:'';
 
 const POSTS=[
@@ -525,7 +545,7 @@ $('catTiles').innerHTML=secs.map(k=>{const c=P.filter(p=>p.sec===k).length;retur
 $('newGrid').innerHTML=DATA.dest.map(id=>byId[id]).map(card).join('');
 $('postGrid').innerHTML=POSTS.map(postCard).join('');
 
-const st={sec:'',tipos:new Set(),mats:new Set(),nina:new Set(),cols:new Set(),pmin:null,pmax:null,q:'',sort:'new',shown:24,exp:new Set()};const PAGE=24;const MAXF=7;
+const st={sec:'',tipos:new Set(),mats:new Set(),nina:new Set(),cols:new Set(),pmin:null,pmax:null,q:'',sort:'new',shown:24,exp:new Set(),qt:[],qfix:''};const PAGE=24;const MAXF=7;
 const CORD=DATA.corder;
 const SW={'Blanco (perla)':'#f6f1e7','Rojo':'#c0392b','Turquesa':'#2bb3b1','Coral':'#f07a55','Rosado':'#f2a7c0','Azul':'#2c4fa3','Verde':'#2e8b57','Negro':'#222','Morado':'#7d3c98','Cristal':'linear-gradient(135deg,#fff,#cfe3ee,#fff)','Multicolor':'conic-gradient(#c0392b,#e1b12c,#2e8b57,#2c4fa3,#7d3c98,#c0392b)','Dorado':'linear-gradient(135deg,#f3d27a,#c9962b)'};
 const NI=p=>p.nina?'Sí':'No';
@@ -534,7 +554,7 @@ let pb=null;
 const qins=[...document.querySelectorAll('.qin')];
 const base=()=>P.filter(p=>!st.sec||p.sec===st.sec);
 function match(p,skip){
- if(st.q&&!p._s.includes(st.q))return false;
+ if(st.q&&!st.qt.every(x=>tokOk(p,x)))return false;
  if(skip!=='p'&&((st.pmin!=null&&p.price<st.pmin)||(st.pmax!=null&&p.price>st.pmax)))return false;
  if(skip!=='t'&&st.tipos.size&&![...st.tipos].some(t=>p.tags.includes(t)))return false;
  if(skip!=='m'&&st.mats.size&&!st.mats.has(p.mat))return false;
@@ -581,7 +601,7 @@ function renderShop(keepPrice){
  if(st.sort==='pd')L.sort((a,b)=>b.price-a.price||a.ord-b.ord);
  if(st.sort==='az')L.sort((a,b)=>a.name.localeCompare(b.name,'es')||a.id.localeCompare(b.id));
   const n=L.length,m=L.reduce((s,p)=>s+p.models.length,0);
- $('count').innerHTML=`<b>${n}</b> producto${n===1?'':'s'}`;
+ $('count').innerHTML=`<b>${n}</b> producto${n===1?'':'s'}`+(st.q&&st.qfix?` · Mostrando resultados para <b>“${st.qfix}”</b> (buscaste “${qins[0].value}”)`:'');
  // búsqueda: el resultado exacto (código o nombre igual a lo buscado) va primero, en su propia fila;
  // los parecidos van en otra fila "¿Quizás buscabas…?" solo si existen
  const ex=st.q?L.filter(p=>norm(p.id)===st.q||norm(p.name)===st.q):[];
@@ -605,10 +625,10 @@ $('side').addEventListener('input',e=>{const i=e.target;if(i.id!=='rLo'&&i.id!==
  const L=$('rLo'),H=$('rHi');if(+L.value>+H.value){if(i===L)L.value=H.value;else H.value=L.value;}
  st.pmin=+L.value>pb.lo?+L.value:null;st.pmax=+H.value<pb.hi?+H.value:null;paintPrice();reset();renderShop(true);});
 const clearAll=()=>{st.exp.clear();st.tipos.clear();st.mats.clear();st.nina.clear();st.cols.clear();st.pmin=st.pmax=null;};
-const clearQ=()=>{st.q='';qins.forEach(x=>x.value='');};
+const clearQ=()=>{st.q='';st.qt=[];st.qfix='';qins.forEach(x=>x.value='');};
 $('active').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const g=b.dataset.g;
  if(SETS[g])st[SETS[g]].delete(b.dataset.v);else if(g==='p'){st.pmin=st.pmax=null;}else if(g==='q')clearQ();else{clearAll();clearQ();}reset();renderShop();});
-qins.forEach(inp=>inp.addEventListener('input',()=>{qins.forEach(x=>{if(x!==inp)x.value=inp.value;});st.q=norm(inp.value);reset();
+qins.forEach(inp=>inp.addEventListener('input',()=>{qins.forEach(x=>{if(x!==inp)x.value=inp.value;});st.q=norm(inp.value);const pq=parseQ(inp.value);st.qt=pq.toks;st.qfix=pq.shown;reset();
  if(view!=='shop'){location.hash='#tienda';}else renderShop();}));
 $('sort').addEventListener('change',e=>{st.sort=e.target.value;reset();renderShop();});
 $('more').addEventListener('click',e=>{if(e.target.id==='moreB'){st.shown+=PAGE;renderShop();}});
