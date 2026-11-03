@@ -479,7 +479,7 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 
 | Foto | Código | Prenda | Material | Incluye | Precio |
 |---|---|---|---|---|---|
-| <img src="t/B-011.jpg" width="110"> | **B-011** | Flor de guate con perlas color rosado de bronce baño 18k | Bronce baño 18k |  | **$23.50** c/u |
+| <img src="t/B-011.jpg" width="110"> | **B-011** | Flor de guate con perla de bronce baño 18k | Bronce baño 18k |  | **$23.50** c/u |
 
 ## Pulseras y cañas
 
