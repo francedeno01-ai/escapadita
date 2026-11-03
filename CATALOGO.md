@@ -2,7 +2,7 @@
 
 La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 
-236 modelos. **Precios en dólares, sin ITBMS.** Para pedir, indica el código del modelo. Tienda: https://francedeno01-ai.github.io/escapadita/
+251 modelos. **Precios en dólares, sin ITBMS.** Para pedir, indica el código del modelo. Tienda: https://francedeno01-ai.github.io/escapadita/
 
 ## Contenido
 
@@ -13,7 +13,7 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 - [Tapahuesos](#tapahuesos) (12)
 - [Cadenas](#cadenas) (35)
 - [Combos de cadenas](#combos-de-cadenas) (3)
-- [Peinetas y adornos de cabeza](#peinetas-y-adornos-de-cabeza) (11)
+- [Peinetas y adornos de cabeza](#peinetas-y-adornos-de-cabeza) (26)
 - [Pulseras y cañas](#pulseras-y-cañas) (5)
 - [Sortijas](#sortijas) (8)
 
@@ -279,6 +279,21 @@ La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 | <img src="t/PE-009.jpg" width="110"> | **PE-009** | Juego de peinetas completo de acero inoxidable | Acero inoxidable | peineta grande, 4 peinetas pequeñas (2 con voluta) | **$65.00** el juego |
 | <img src="t/PE-010.jpg" width="110"> | **PE-010** | Set de peinetas con perlas color rojo de oro enchapado | Oro enchapado |  | **$32.50** el juego |
 | <img src="t/PE-011.jpg" width="110"> | **PE-011** | Set de peinetas de acero inoxidable | Acero inoxidable |  | **$26.00** el juego |
+| <img src="t/PE-012.jpg" width="110"> | **PE-012** | Juego de peinetas completo con perlas color turquesa de acero inoxidable | Acero inoxidable |  | **$50.50** el juego |
+| <img src="t/PE-013.jpg" width="110"> | **PE-013** | Juego de peinetas completo con perlas blancas de acero inoxidable | Acero inoxidable |  | **$50.50** el juego |
+| <img src="t/PE-014.jpg" width="110"> | **PE-014** | Juego de peinetas completo de oro enchapado | Oro enchapado |  | **$39.00** el juego |
+| <img src="t/PE-015.jpg" width="110"> | **PE-015** | Juego de peinetas completo para niña de 0 a 4 años de acero inoxidable | Acero inoxidable |  | **$39.00** el juego |
+| <img src="t/PE-016.jpg" width="110"> | **PE-016** | Juego de peinetas completo para niña de 5 a 8 años de acero inoxidable | Acero inoxidable |  | **$41.50** el juego |
+| <img src="t/PE-017.jpg" width="110"> | **PE-017** | Juego de peinetas completo para niña de 1 a 5 años de oro enchapado | Oro enchapado |  | **$39.00** el juego |
+| <img src="t/PE-018.jpg" width="110"> | **PE-018** | Par de peinetas robacorazones con perlas blancas de acero inoxidable | Acero inoxidable |  | **$26.00** el par |
+| <img src="t/PE-019.jpg" width="110"> | **PE-019** | Par de peinetas balcones con perlas blancas de acero inoxidable | Acero inoxidable |  | **$26.00** el par |
+| <img src="t/PE-020.jpg" width="110"> | **PE-020** | Peinetón con perlas blancas de oro enchapado | Oro enchapado |  | **$19.50** c/u |
+| <img src="t/PE-021.jpg" width="110"> | **PE-021** | Peinetón de oro enchapado | Oro enchapado |  | **$13.00** c/u |
+| <img src="t/PE-022.jpg" width="110"> | **PE-022** | Pajuela con perlas blancas de oro enchapado | Oro enchapado |  | **$13.00** c/u |
+| <img src="t/PE-023.jpg" width="110"> | **PE-023** | Jazmín con perlas blancas de oro enchapado | Oro enchapado |  | **$5.00** c/u |
+| <img src="t/PE-024.jpg" width="110"> | **PE-024** | Jazmín con perlas color rojo y turquesa de oro enchapado | Oro enchapado |  | **$5.00** c/u |
+| <img src="t/PE-025.jpg" width="110"> | **PE-025** | Jazmín móvil con perlas color turquesa, rojo y blanco de oro enchapado | Oro enchapado |  | **$8.00** c/u |
+| <img src="t/PE-026.jpg" width="110"> | **PE-026** | Gancho de flor con perlas blancas de oro enchapado | Oro enchapado |  | **$5.00** c/u |
 
 ## Pulseras y cañas
 
