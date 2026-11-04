@@ -77,6 +77,8 @@ a{color:inherit}
 .rail::-webkit-scrollbar{display:none}
 .rail>*{scroll-snap-align:start}
 .rail.gifts{--per:5;--gap:20px}
+.rail.blog{--per:3;--gap:24px}
+.cbtn.blog-top{top:30%}
 .cbtn{position:absolute;top:38%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:22px;line-height:1;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px rgba(43,28,18,.14)}
 .cbtn:hover{background:var(--soft)}
 .cbtn.l{left:-18px}.cbtn.r{right:-18px}
@@ -99,6 +101,8 @@ a{color:inherit}
 .how li strong{display:block;color:#fbf6ec;margin-bottom:4px}
 .how li span{font-size:14px;color:#d8c8b0}
 .posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.post h2.ptit{font-weight:700;font-size:21px;line-height:1.2;margin:0}
+.art.idx{max-width:none}
 .post{display:flex;flex-direction:column;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .post .pi{overflow:hidden}
 .post img{aspect-ratio:16/10;width:100%;object-fit:cover;transition:transform .5s}
@@ -273,7 +277,7 @@ h3.ttl{margin:0}
 .drawer-h{display:none}
 .msearch{display:none;padding-block:14px 0}
 .msearch .hsearch{display:block;max-width:none;margin:0}
-@media (max-width:1100px){.rail{--per:4}.rail.gifts{--per:4}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.mnav{display:none}.foot .wrap{grid-template-columns:1fr 1fr}}
+@media (max-width:1100px){.rail{--per:4}.rail.gifts{--per:4}.rail.blog{--per:3}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.mnav{display:none}.foot .wrap{grid-template-columns:1fr 1fr}}
 @media (max-width:900px){
  .hdr .wrap{height:76px;gap:12px}
  .logo img{width:58px;height:58px}.logo b{font-size:22px}.logo .lt span{font-size:15px}
@@ -291,7 +295,7 @@ h3.ttl{margin:0}
  .pdp{grid-template-columns:1fr}
  .info{padding:4px 20px 24px}
  .hero{grid-template-columns:1fr;padding-top:32px;gap:36px}
- .rail{--per:3}.rail.gifts{--per:3}.cbtn{display:none}
+ .rail{--per:3}.rail.gifts{--per:3}.rail.blog{--per:2}.cbtn{display:none}
  .how{grid-template-columns:1fr;padding:28px}
  .posts{grid-template-columns:repeat(2,minmax(0,1fr))}
  .msearch{display:block}
@@ -304,7 +308,7 @@ h3.ttl{margin:0}
  .foot .wrap{grid-template-columns:1fr}
  .ttl{font-size:15px}
  .sort span{display:none}
- .rail{--per:2.3;--gap:12px}.rail.gifts{--per:2.2;--gap:12px}
+ .rail{--per:2.3;--gap:12px}.rail.gifts{--per:2.2;--gap:12px}.rail.blog{--per:1.15;--gap:14px}
  .how ol{grid-template-columns:1fr}
  .posts{grid-template-columns:1fr}
  .igband{padding:22px}

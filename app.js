@@ -111,12 +111,12 @@ $('fposts').innerHTML=POSTS.slice(0,4).map(a=>`<li><a href="${U.b(a.slug)}">${a.
 
 const nModels=P.reduce((s,p)=>s+p.models.length,0);
 let railBtns=()=>{};
+const GIFT=9.99;  // "Pequeños regalos": menos de $10
 if($('vHome')){
 $('facts').innerHTML=`<div><b>${secs.length}</b><span>categorías</span></div><div><b>${P.length}</b><span>modelos con precio</span></div><div><b>${money(Math.min(...P.map(p=>p.price)))}</b><span>desde</span></div>`;
 $('heroImgs').innerHTML=DATA.hero.map(id=>`<img src="${jp('i',img0(id))}" alt="">`).join('')+`<img class="seal" src="/brand/logo.jpg" alt="Sello La Escapadita a lo Nuestro">`;
 $('catTiles').innerHTML=secs.map(k=>{const c=P.filter(p=>p.sec===k).length;return `<a class="cat" href="${U.c(k)}"><img src="${jp('i',img0(SECPROD[k]))}" alt="" loading="lazy"><div class="ct"><div><h3>${SECNAME[k]}</h3><small>${c} productos</small></div><span class="go" aria-hidden="true">→</span></div></a>`;}).join('');
 $('newGrid').innerHTML=DATA.dest.map(id=>byId[id]).map(card).join('');
-const GIFT=9.99;  // "Pequeños regalos": menos de $10
 // regalos: primero broches y jazmines intercalados; luego el resto de menor a mayor precio
 const gifts=P.filter(p=>p.price<10).sort((a,b)=>a.price-b.price||a.ord-b.ord);
 const gB=gifts.filter(p=>p.sec==='broches'),gJ=gifts.filter(p=>/^Jazm/.test(p.tags[0]||'')),mix=[];
@@ -225,7 +225,7 @@ const openF=()=>{side.classList.add('open');scrim.hidden=false;};const closeF=()
 $('openF').onclick=openF;$('closeF').onclick=closeF;scrim.onclick=closeF;
 
 function renderPost(a){
- $('art').innerHTML=`<p class="crumb"><a href="/">Inicio</a> / <a href="/#aprende">Aprende</a></p><span class="tg">${a.tag}</span><h1>${a.title}</h1><p class="dek">${a.dek}</p><img class="hi" src="${jp('i',img0(a.prod))}" alt=""><div class="body">${a.body}</div>
+ $('art').innerHTML=`<p class="crumb"><a href="/">Inicio</a> / <a href="/aprende/">Aprende</a></p><span class="tg">${a.tag}</span><h1>${a.title}</h1><p class="dek">${a.dek}</p><img class="hi" src="${jp('i',img0(a.prod))}" alt=""><div class="body">${a.body}</div>
  <div class="shop"><div><b>Encuentra tus prendas</b>Pídelas por WhatsApp con su código.</div><a class="btn pri" href="${a.shop[0]?U.c(a.shop[0]):'/tienda/'}">${a.shop[1]}</a></div>
  ${a.src.length?`<div class="src"><b>Fuentes</b><ul>${a.src.map(([t,u])=>`<li><a href="${u}" target="_blank" rel="noopener">${t}</a></li>`).join('')}</ul></div>`:''}`;
  $('morePosts').innerHTML=POSTS.filter(x=>x!==a).slice(0,3).map(postCard).join('');}
@@ -287,7 +287,7 @@ function show(v){view=v;if($('vHome'))$('vHome').hidden=v!=='home';$('vShop').hi
 /* rutas internas (#…) <-> URLs reales */
 const P2H={'/':'#inicio','/tienda/':'#tienda','/regalos/':'#regalos'};
 Object.entries(UR.c).forEach(([k,u])=>P2H[u]='#c-'+k);Object.entries(UR.p).forEach(([id,u])=>P2H[u]='#p-'+id);Object.entries(UR.b).forEach(([sl,u])=>P2H[u]='#blog-'+sl);
-P2H['/envios-y-devoluciones/']='#info';
+P2H['/envios-y-devoluciones/']='#info';P2H['/aprende/']='#idx';
 const H2P={};Object.entries(P2H).forEach(([u,h])=>H2P[h]=u);H2P['#aprende']='/#aprende';
 const curRoute=()=>{const p=location.pathname.replace(/index\.html$/,'');if(p==='/'&&location.hash==='#aprende')return '#aprende';return P2H[p]||P2H[p+'/']||'#inicio';};
 function go(h,replace){const u=H2P[h]||'/';history[replace?'replaceState':'pushState'](null,'',u);route();}
@@ -298,7 +298,7 @@ function route(){const h=curRoute();let m;
  else if(h==='#tienda'){if(st.sec!==''||st.pmax===GIFT){st.sec='';clearAll();reset();}show('shop');renderShop();if(lastBase!==h)window.scrollTo(0,0);}
  else if((m=h.match(/^#c-(\w+)$/))&&SECNAME[m[1]]){if(st.sec!==m[1]){st.sec=m[1];clearAll();reset();}show('shop');renderShop();if(lastBase!==h)window.scrollTo(0,0);}
  else if((m=h.match(/^#blog-([\w-]+)$/))&&POSTS.find(a=>a.slug===m[1])){show('post');renderPost(POSTS.find(a=>a.slug===m[1]));window.scrollTo(0,0);}
- else if(h==='#info'){show('post');window.scrollTo(0,0);}
+ else if(h==='#info'||h==='#idx'){show('post');window.scrollTo(0,0);}
  else if(!$('vHome')){location.href=H2P[h]||'/';return;}
  else if(h==='#aprende'){show('home');setTimeout(()=>$('aprende').scrollIntoView(),0);}
  else{show('home');setTimeout(railBtns,50);if(lastBase!==h)window.scrollTo(0,0);}
@@ -307,7 +307,7 @@ function route(){const h=curRoute();let m;
 document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target||a.hasAttribute('download'))return;
  const u=new URL(a.href,location.href);if(u.origin!==location.origin)return;
  const path=u.pathname,h=path==='/'&&u.hash==='#aprende'?'#aprende':P2H[path];if(!h)return;
- if(h==='#info'||((h==='#inicio'||h==='#aprende')&&!$('vHome')))return;
+ if(h==='#info'||h==='#idx'||((h==='#inicio'||h==='#aprende')&&!$('vHome')))return;
  e.preventDefault();if(h.startsWith('#p-'))entered=true;history.pushState(null,'',path+(h==='#aprende'?'#aprende':''));route();});
 window.addEventListener('popstate',route);
 /* enlaces viejos con # (ej. /#p-C-001, /#c-cadenas) -> URL nueva */
