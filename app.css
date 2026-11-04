@@ -256,6 +256,15 @@ h3.ttl{margin:0}
 .foot .wrap{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
 .flogo{display:flex;gap:16px;align-items:center;margin-bottom:12px}.flogo img{width:84px;height:84px;border-radius:50%}
 .foot b{color:#fbf6ec;font-weight:800;font-size:22px;line-height:1.1}
+.foot .contacto{display:grid;gap:12px}
+.foot .contacto a{display:flex;align-items:center;gap:12px;text-decoration:none}
+.foot .contacto a:hover b{text-decoration:underline;text-underline-offset:3px}
+.foot .contacto b{display:block;color:#fbf6ec;font-family:var(--fb);font-size:14px}
+.foot .contacto span:last-child{font-size:13px;line-height:1.3}
+.foot .ci{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(251,246,236,.1);color:#e9b84a}
+.foot .ci svg{width:20px;height:20px}
+.foot .ci.wa{background:#25d366;color:#fff}
+.foot .ci.ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff}
 .foot .fh{font-family:var(--fb);font-variation-settings:normal;font-weight:700;color:#e9b84a;margin:0 0 10px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
 .foot p{margin:0;font-size:14px;max-width:44ch}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px}
