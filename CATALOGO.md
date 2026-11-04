@@ -2,7 +2,7 @@
 
 La Escapadita a lo Nuestro · Pedidos por WhatsApp +507 6675-0518
 
-265 modelos. **Precios en dólares, sin ITBMS.** Para pedir, indica el código del modelo. Tienda: https://francedeno01-ai.github.io/escapadita/
+265 modelos. **Precios en dólares, sin ITBMS.** Para pedir, indica el código del modelo. Tienda: https://laescapadita.com/
 
 ## Contenido
 
