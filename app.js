@@ -287,6 +287,7 @@ function show(v){view=v;if($('vHome'))$('vHome').hidden=v!=='home';$('vShop').hi
 /* rutas internas (#…) <-> URLs reales */
 const P2H={'/':'#inicio','/tienda/':'#tienda','/regalos/':'#regalos'};
 Object.entries(UR.c).forEach(([k,u])=>P2H[u]='#c-'+k);Object.entries(UR.p).forEach(([id,u])=>P2H[u]='#p-'+id);Object.entries(UR.b).forEach(([sl,u])=>P2H[u]='#blog-'+sl);
+P2H['/envios-y-devoluciones/']='#info';
 const H2P={};Object.entries(P2H).forEach(([u,h])=>H2P[h]=u);H2P['#aprende']='/#aprende';
 const curRoute=()=>{const p=location.pathname.replace(/index\.html$/,'');if(p==='/'&&location.hash==='#aprende')return '#aprende';return P2H[p]||P2H[p+'/']||'#inicio';};
 function go(h,replace){const u=H2P[h]||'/';history[replace?'replaceState':'pushState'](null,'',u);route();}
@@ -297,6 +298,7 @@ function route(){const h=curRoute();let m;
  else if(h==='#tienda'){if(st.sec!==''||st.pmax===GIFT){st.sec='';clearAll();reset();}show('shop');renderShop();if(lastBase!==h)window.scrollTo(0,0);}
  else if((m=h.match(/^#c-(\w+)$/))&&SECNAME[m[1]]){if(st.sec!==m[1]){st.sec=m[1];clearAll();reset();}show('shop');renderShop();if(lastBase!==h)window.scrollTo(0,0);}
  else if((m=h.match(/^#blog-([\w-]+)$/))&&POSTS.find(a=>a.slug===m[1])){show('post');renderPost(POSTS.find(a=>a.slug===m[1]));window.scrollTo(0,0);}
+ else if(h==='#info'){show('post');window.scrollTo(0,0);}
  else if(!$('vHome')){location.href=H2P[h]||'/';return;}
  else if(h==='#aprende'){show('home');setTimeout(()=>$('aprende').scrollIntoView(),0);}
  else{show('home');setTimeout(railBtns,50);if(lastBase!==h)window.scrollTo(0,0);}
@@ -305,7 +307,7 @@ function route(){const h=curRoute();let m;
 document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target||a.hasAttribute('download'))return;
  const u=new URL(a.href,location.href);if(u.origin!==location.origin)return;
  const path=u.pathname,h=path==='/'&&u.hash==='#aprende'?'#aprende':P2H[path];if(!h)return;
- if((h==='#inicio'||h==='#aprende')&&!$('vHome'))return;
+ if(h==='#info'||((h==='#inicio'||h==='#aprende')&&!$('vHome')))return;
  e.preventDefault();if(h.startsWith('#p-'))entered=true;history.pushState(null,'',path+(h==='#aprende'?'#aprende':''));route();});
 window.addEventListener('popstate',route);
 /* enlaces viejos con # (ej. /#p-C-001, /#c-cadenas) -> URL nueva */

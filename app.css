@@ -232,6 +232,8 @@ h3.ttl{margin:0}
 .meta{display:flex;flex-wrap:wrap;gap:8px}
 .meta span{background:var(--soft);border-radius:6px;padding:5px 9px;font-size:13px;font-weight:600}
 .price{font-size:15px;color:var(--mut)}
+.pnote{font-size:13px;line-height:1.45;color:var(--mut);margin:-4px 0 14px;padding:10px 12px;background:var(--soft);border-radius:10px}
+.pnote a{color:var(--red);font-weight:700}
 .price b{color:var(--red);font-size:30px;line-height:1.1;display:block;font-family:var(--fd);font-variant-numeric:tabular-nums}
 .sel{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px}
 .sel small{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);font-weight:700}
